@@ -1,6 +1,6 @@
-# 🧠 Letter Detector – Offline AI Letter Recognition from Images
+# 🧠 Letter Detector – Offline OCR Letter Recognition from Images
 
-This project recognizes single alphabet letters (A–Z) from `.jpg` images using a local AI model. It runs entirely offline and uses a pretrained Convolutional Neural Network (CNN) in `.h5` format via TensorFlow.
+This project recognizes single alphabet letters (A–Z) from `.jpg` images using Tesseract OCR. It runs entirely offline and processes images to extract letters with confidence scores.
 
 ---
 
@@ -9,22 +9,26 @@ This project recognizes single alphabet letters (A–Z) from `.jpg` images using
 - ✅ Detects a single letter from an input image (e.g., a handwritten or printed character).
 - ✅ Runs completely offline — no internet connection required.
 - ✅ Returns both the predicted letter and the confidence score.
-- ✅ Automatically processes the input (resizes, normalizes, inverts colors).
+- ✅ Automatically processes the input (resizes, normalizes, thresholds).
 
 ---
 
-## 🤖 Model Used
+## 🛠️ Technology Used
 
-This project uses a pretrained model: `emnist_v7.h5`, created and shared by [zmandyhe](https://github.com/zmandyhe/image-classification-mnist-emnist-letters), trained on the [EMNIST Letters dataset](https://www.nist.gov/itl/products-and-services/emnist-dataset).
+This project uses Tesseract OCR with Python:
 
-📁 Direct model download:  
-🔗 https://github.com/zmandyhe/image-classification-mnist-emnist-letters/raw/master/emnist_v7.h5
+- **OpenCV** - For image processing and preparation
+- **Pytesseract** - Python wrapper for Google's Tesseract OCR engine
+- **NumPy** - For numerical operations
+- **PIL** - Python Imaging Library for additional image handling
 
----
+## 📋 Installation
 
-## 🛠 Requirements
+1. Install Tesseract OCR:
+   - **Windows**: Download from [https://github.com/UB-Mannheim/tesseract/wiki](https://github.com/UB-Mannheim/tesseract/wiki)
+   - **Linux**: `sudo apt install tesseract-ocr`
+   - **macOS**: `brew install tesseract`
 
-Install dependencies:
-
-```bash
-pip install -r requirements.txt
+2. Install Python dependencies:
+   ```bash
+   pip install -r requirements.txt
